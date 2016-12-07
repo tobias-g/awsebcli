@@ -41,6 +41,7 @@ class InitController(AbstractBaseController):
         # get arguments
         self.interactive = self.app.pargs.interactive
         self.region = self.app.pargs.region
+        self.environment = self.app.pargs.environment
         self.flag = False
         if self.app.pargs.platform:
             self.flag = True
@@ -52,6 +53,9 @@ class InitController(AbstractBaseController):
             self.region = self.get_region()
         else:
             self.region = self.get_region_from_inputs()
+
+        if self.environment:
+            default_env = self.environment
 
         self.set_up_credentials()
 

@@ -79,6 +79,7 @@ class EB(foundation.CementApp):
                      action='store_true', help=flag_text['base.verbose'])
         self.add_arg('--profile', help=flag_text['base.profile'])
         self.add_arg('-r', '--region', help=flag_text['base.region'])
+        self.add_arg('-e', '--environment', help=flag_text['base.environment'])
         self.add_arg('--endpoint-url', help=SUPPRESS)
 
         globals.app = self
